@@ -1,0 +1,19 @@
+<table>
+    <thead>
+        <tr>
+            <th>Picture</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Number of Books</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td><img src="{{ id.picture }}" alt="{{ id.username }}" width="50" height="50"></td>
+                <td>{{ id.username |upper }}</td>
+                <td>{{ id.email }}</td>
+                <td>{{ id.nb_books }}</td>
+            </tr>
+    </tbody>
+
+</table>

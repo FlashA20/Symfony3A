@@ -1,0 +1,35 @@
+<table>
+    <thead>
+        <tr>
+            <th>Picture</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Number of Books</th>
+
+
+            <th>    author details</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for author in authors %}
+            <tr>
+                <td><img src="{{ author.picture }}" alt="{{ author.username }}" width="50" height="50"></td>
+                <td>{{ author.username |upper }}</td>
+                <td>{{ author.email }}</td>
+                <td>{{ author.nb_books }}</td>
+                <td><a href="{{ path('author_details',{'id': author.id}) }}" class="btn btn-primary"> Details </a><td>
+            </tr>
+        {% else %}
+            pas d'authors
+        {% endfor %}
+    </tbody>
+
+</table>
+<p>Nombre total d'auteurs : {{ authors|length }}</p>
+{% set total=0 %}
+{%for author in authors%}
+{%set total=total+author.nb_books%}
+{% endfor %}
+<p>nombre total des livres: {{total}} <p>
+
+
