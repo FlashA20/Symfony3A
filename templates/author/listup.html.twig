@@ -1,0 +1,25 @@
+<table>
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+
+
+            <th>    author details </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for author in authors %}
+            <tr>
+                <td>{{ author.username |upper }}</td>
+                <td>{{ author.email }}</td>
+                <td><a href="{{ path('author_details',{'id': author.id}) }}" class="btn btn-primary"> Details </a><td>
+            </tr>
+        {% else %}
+            pas d'authors
+        {% endfor %}
+    </tbody>
+
+</table>
+<p>Nombre total d'auteurs : {{ authors|length }}</p>
+
